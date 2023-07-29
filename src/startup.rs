@@ -1,7 +1,7 @@
 use crate::routes::{health_check, subscribe};
 use actix_web::dev::Server;
 use actix_web::{web, App, HttpServer};
-use actix_web::middleware::Logger;
+use tracing_actix_web::TracingLogger;
 use sqlx::PgPool;
 use std::net::TcpListener;
 
@@ -11,7 +11,7 @@ pub async fn run(listener: TcpListener, db_pool: PgPool) -> Result<Server, std::
 
     let server = HttpServer::new(move || {
         App::new()
-            .wrap(Logger::default())
+            .wrap(TracingLogger::default())
             .service(health_check)
             .service(subscribe)
             .app_data(db_pool.clone())
