@@ -1,6 +1,7 @@
 pub mod configuration;
 pub mod routes;
 pub mod startup;
+pub mod telemetry;
 
 // #[get("/health_check")]
 // async fn health_check() -> HttpResponse {
