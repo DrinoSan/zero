@@ -7,3 +7,7 @@ TEST_LOG=true cargo test health_check_works | bunyan
 ```
 cargo test
 ```
+
+# Prod
+To run on remote production server.
+- Dont forget export APP_ENVIRONMENT=production
