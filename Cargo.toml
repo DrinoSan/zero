@@ -21,6 +21,7 @@ path = "src/main.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+argon2 = { version = "0.3", features = ["std"] }
 sha3 = "0.9"
 base64 = "0.13"
 serde-aux = "3"
