@@ -129,6 +129,7 @@ pub async fn publish_newsletter(
 }
 
 struct Credentials {
+    // These two fields were not marked as `pub` before!
     username: String,
     password: Secret<String>,
 }
@@ -173,10 +174,10 @@ async fn validate_credentials(
 ) -> Result<uuid::Uuid, PublishError> {
     let row: Option<_> = sqlx::query!(
         r#"
-        SELECT user_id, password_hash, salt
-        FROM users
-        WHERE username = $1
-        "#,
+            SELECT user_id, password_hash
+            FROM users
+            WHERE username = $1
+            "#,
         credentials.username,
     )
     .fetch_optional(pool)
