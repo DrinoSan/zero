@@ -23,3 +23,5 @@ To run on remote production server.
 -- SKIP_DOCKER=true ./scripts/init_db.sh
 - Else:
 -- ./scripts/init_db.sh
+- Adding patches
+-- sqlx migrate add name_of_change
