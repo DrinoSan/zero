@@ -17,6 +17,7 @@ cargo test
 # Prod
 To run on remote production server.
 - Dont forget export APP_ENVIRONMENT=production
+- Set the `APP_APPLICATION__HMAC_SECRET` environment variable
 
 # Database migration
 - If docker is running;

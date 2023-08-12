@@ -22,6 +22,10 @@ path = "src/main.rs"
 
 [dependencies]
 argon2 = { version = "0.3", features = ["std"] }
+hmac = { version = "0.12", features = ["std"] }
+sha2 = "0.10"
+htmlescape = "0.3"
+urlencoding = "2"
 base64 = "0.13"
 serde-aux = "3"
 reqwest = { version = "0.11", default-features = false, features = ["json", "rustls-tls"] }
